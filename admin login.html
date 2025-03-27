@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://t3.ftcdn.net/jpg/05/01/28/98/360_F_501289857_UBgHhxSDzD5m24HsQZ52uDT9KMDi3WQd.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.2);
+             box-shadow: 0px 0px 40px rgba(224,225,55, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            width: 20%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        .login-btn {
+            width: 40%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+        #back
+        {
+            top:30px;
+    left: 20px;
+    background: aqua;
+    padding: 10px;
+    font-size: large;
+    border-radius: 20px;
+    position:absolute;
+    cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="back" onclick="location.href='login.html'">Go Back</button>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <input type="text" id="adminUsername" placeholder="Enter Username">
+        <input type="password" id="adminPassword" placeholder="Enter Password">
+        <p class="error" id="errorMessage">Invalid username or password!</p>
+        <button class="login-btn" onclick="adminLogin()">Login</button>
+    </div>
+
+    <script>
+        function adminLogin() {
+            const username = document.getElementById("adminUsername").value;
+            const password = document.getElementById("adminPassword").value;
+            const errorMessage = document.getElementById("errorMessage");
+            const adminUser = "admin";
+            const adminPass = "123";
+            if (username === adminUser && password === adminPass) {
+                window.location.href = "report.html";  
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
